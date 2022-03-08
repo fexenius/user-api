@@ -8,26 +8,15 @@ const {
   createUser,
   updateUser,
   deleteUser,
-} = require("../models/user");
+} = require("../controllers/user");
 
-router.get("/", routeCache.cacheSeconds(20), function (req, res) {
-  getUsers(req, res);
-});
+router.get("/", routeCache.cacheSeconds(20), getUsers);
+router.get("/:id", getUserById);
 
-router.get("/:id", function (req, res) {
-  getUserById(req, res);
-});
+router.post("/", createUser);
 
-router.post("/", function (req, res) {
-  createUser(req, res);
-});
+router.patch("/:id", updateUser);
 
-router.patch("/:id", async function (req, res) {
-  updateUser(req, res);
-});
-
-router.delete("/:id", function (req, res) {
-  deleteUser(req, res);
-});
+router.delete("/:id", deleteUser);
 
 module.exports = router;
