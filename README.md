@@ -4,4 +4,4 @@
 https://documenter.getpostman.com/view/17658226/UVsEXA48
 
 ## Test API
-https://user-api-v.herokuapp.com/api
+http://62.113.102.160:4000/api/
